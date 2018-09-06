@@ -1,0 +1,7 @@
+{
+  "name": "credit-card-app",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
