@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
+import { AddCreditCardPage } from '../addCreditCard';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -11,4 +13,7 @@ export class HomePage {
 
   }
 
+  addCreditCard() {
+    this.navCtrl.push(AddCreditCardPage)
+  }
 }

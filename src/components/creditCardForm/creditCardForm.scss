@@ -1,0 +1,49 @@
+credit-card-form {
+  .item {
+    padding-left: 0;
+  }
+
+  .item-inner {
+    padding: 0 8px;
+    border: 1px solid #dedede;
+  }
+
+  .item.item-input.item-input-has-focus,
+  .item.item-input.input-has-focus {
+    .item-inner {
+      box-shadow: none;
+      border-color: #488aff;
+    }
+  }
+
+  .has-success.item.item-block .item-inner,
+  .item.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
+  .item.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+    box-shadow: none;
+    border-color: #32db64;
+  }
+
+  .has-danger.item.item-block .item-inner,
+  .item.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
+  .list .item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus):last-child {
+    border-color: #f53d3d !important;
+    box-shadow: none;
+  }
+
+  .label {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+
+    input {
+      flex: 1;
+      border: 0;
+      outline: 0;
+      margin: 0 8px;
+      width: 100%;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}

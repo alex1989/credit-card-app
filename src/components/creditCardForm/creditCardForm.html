@@ -1,0 +1,76 @@
+<form [formGroup]="creditCardForm" novalidate>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+        <ion-label>
+          Credit Card
+        </ion-label>
+        <ion-item
+          class="card-input md"
+          [ngClass]="{
+            'has-danger': creditCard.invalid && (creditCard.dirty || creditCard.touched),
+            'has-success': creditCard.valid && (creditCard.dirty || creditCard.touched)
+          }"
+        >
+          <i [class]="cardType"></i>
+          <input
+            #creditCardInput
+            type="tel"
+            formControlName="creditCard"
+            placeholder="XXXX XXXX XXXX XXXX"
+            class="no-border"
+            mask="0000 0000 0000 0000"
+            pattern="\\d*"
+            decimal="true"
+            required>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6>
+        <ion-label>
+          Expiration
+        </ion-label>
+        <ion-item
+          class="md"
+          [ngClass]="{
+            'has-danger': exp.invalid && (exp.dirty || exp.touched),
+            'has-success': exp.valid && (exp.dirty || exp.touched)
+          }"
+        >
+          <input
+            #expirationInput
+            type="tel"
+            formControlName="exp"
+            placeholder="XX/XX"
+            [mask]="expirationMask"
+            pattern="\\d*"
+            decimal="true"
+            required>
+        </ion-item>
+      </ion-col>
+      <ion-col col-6>
+        <ion-label>
+          Security Code
+        </ion-label>
+        <ion-item
+          class="md"
+          [ngClass]="{
+              'has-danger': cvc.invalid && (cvc.dirty || cvc.touched),
+              'has-success': cvc.valid && (cvc.dirty || cvc.touched)
+          }"
+        >
+          <input
+            #cvcInput
+            type="tel"
+            formControlName="cvc"
+            placeholder="XXX"
+            [mask]="cvcMask"
+            pattern="\\d*"
+            decimal="true"
+            required>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</form>

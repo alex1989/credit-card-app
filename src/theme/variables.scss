@@ -4,6 +4,7 @@
 // Font path is used to include ionicons,
 // roboto, and noto sans fonts
 $font-path: "../assets/fonts";
+$fa-font-path: "../assets/fonts";
 
 
 // The app direction is used to include
@@ -13,6 +14,7 @@ $app-direction: ltr;
 
 
 @import "ionic.globals";
+@import "../node_modules/font-awesome/scss/font-awesome.scss";
 
 
 // Shared Variables

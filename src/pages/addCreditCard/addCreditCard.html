@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Add Credit Card
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="submitForm()">
+        Next
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <credit-card-form  #creditCardForm (onFormSubmit)="addCard($event)"></credit-card-form>
+</ion-content>
