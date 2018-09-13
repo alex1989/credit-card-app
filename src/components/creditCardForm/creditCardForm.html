@@ -8,7 +8,7 @@
         <ion-item
           class="card-input md"
           [ngClass]="{
-            'has-danger': creditCard.invalid && (creditCard.dirty || creditCard.touched),
+            'has-danger': creditCard.invalid && !isActive(creditCardInput) && (creditCard.dirty || creditCard.touched),
             'has-success': creditCard.valid && (creditCard.dirty || creditCard.touched)
           }"
         >
@@ -19,7 +19,7 @@
             formControlName="creditCard"
             placeholder="XXXX XXXX XXXX XXXX"
             class="no-border"
-            mask="0000 0000 0000 0000"
+            [mask]="creditCardMask"
             pattern="\\d*"
             decimal="true"
             required>
@@ -34,7 +34,7 @@
         <ion-item
           class="md"
           [ngClass]="{
-            'has-danger': exp.invalid && (exp.dirty || exp.touched),
+            'has-danger': exp.invalid && !isActive(expirationInput) && (exp.dirty || exp.touched),
             'has-success': exp.valid && (exp.dirty || exp.touched)
           }"
         >
@@ -56,7 +56,7 @@
         <ion-item
           class="md"
           [ngClass]="{
-              'has-danger': cvc.invalid && (cvc.dirty || cvc.touched),
+              'has-danger': cvc.invalid && !isActive(cvcInput) && (cvc.dirty || cvc.touched),
               'has-success': cvc.valid && (cvc.dirty || cvc.touched)
           }"
         >

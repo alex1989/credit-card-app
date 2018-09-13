@@ -1,13 +1,12 @@
-import { Component, EventEmitter, Output, Renderer2, ViewChild } from '@angular/core'; // HostListener,
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AfterViewInit, Component, EventEmitter, OnDestroy, OnInit, Output, Renderer2, ViewChild } from '@angular/core'; // HostListener,
+import { FormBuilder, FormGroup } from '@angular/forms';
 import cardValidator from 'card-validator';
-import { NavController } from 'ionic-angular';
 
 @Component({
   selector: 'credit-card-form',
   templateUrl: 'creditCardForm.html'
 })
-export class CreditCardForm {
+export class CreditCardForm implements OnInit, OnDestroy, AfterViewInit {
   @Output() onFormSubmit = new EventEmitter<any>();
   // html elements
   @ViewChild('creditCardInput') creditCardInput;
@@ -89,7 +88,6 @@ export class CreditCardForm {
         }
       ]),
     });
-
   }
 
   clickout(event) {
@@ -99,6 +97,10 @@ export class CreditCardForm {
     ) {
       this.creditCardInput.nativeElement.focus();
     }
+  }
+
+  isActive(input) {
+    return input === document.activeElement;
   }
 
   submitForm() {
